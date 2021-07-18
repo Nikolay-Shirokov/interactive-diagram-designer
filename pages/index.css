@@ -13,5 +13,9 @@
 @import url(../blocks/schema/schema.css);
 @import url(../blocks/schema/__image/schema__image.css);
 @import url(../blocks/schema/__objects/schema__objects.css);
+@import url(../blocks/schema/__object/schema__object.css);
 @import url(../blocks/schema/__area/schema__area.css);
 @import url(../blocks/schema/__points/schema__points.css);
+@import url(../blocks/schema/__point/schema__point.css);
+@import url(../blocks/schema/__coordinate-caption/schema__coordinate-caption.css);
+@import url(../blocks/schema/__coordinate-input/schema__coordinate-input.css);

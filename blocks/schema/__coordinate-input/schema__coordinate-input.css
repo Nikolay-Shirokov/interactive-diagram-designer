@@ -1,0 +1,9 @@
+﻿.schema__coordinate-input {
+  width: 50px;
+  border: none;
+  background-color: transparent;
+}
+
+.schema__coordinate-input:nth-of-type(2n-1) {
+  margin-right: 10px;
+}

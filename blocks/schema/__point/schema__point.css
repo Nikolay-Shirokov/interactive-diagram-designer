@@ -1,0 +1,10 @@
+﻿.schema__point {
+  display: flex;
+  border-radius: inherit;
+  border: 1px solid var(--basic-border-color);
+  padding: 3px;
+}
+
+.schema__point:hover {
+  background-color: var(--basic-hover-color);
+}

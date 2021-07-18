@@ -1,0 +1,13 @@
+﻿.schema__object {
+  border: inherit;
+  border-radius: inherit;
+  padding: inherit;
+  text-align: center;
+  width: 30px;
+  height: 18px;
+  display: block;
+}
+
+.schema__object:hover {
+  background-color: var(--basic-hover-color);
+}

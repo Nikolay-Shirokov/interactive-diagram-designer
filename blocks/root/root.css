@@ -1,8 +1,10 @@
 ﻿:root {
-  --basic-border: #dadce0;
+  --basic-border-color: #dadce0;
+  --basic-hover-color: #eee;
+  --basic-interval: 20px;
 }
 
 .root {
   padding: 0 30px;
-  max-width: calc(1000px + 2*20px);
+  max-width: calc(1000px + 2*var(--basic-interval));
 }
