@@ -1,7 +1,10 @@
 ﻿.schema__coordinate-input {
-  width: 50px;
+  width: 40%;
   border: none;
   background-color: transparent;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .schema__coordinate-input:nth-of-type(2n-1) {

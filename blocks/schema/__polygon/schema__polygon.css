@@ -1,0 +1,10 @@
+﻿.schema__polygon {
+  fill: #669966;
+  stroke: black;
+  fill-opacity: .5;
+}
+
+.schema__polygon:hover {
+	/*fill: #ffc70b;*/
+  fill-opacity: .8;
+}

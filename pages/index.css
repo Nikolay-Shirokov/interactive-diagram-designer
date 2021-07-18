@@ -8,6 +8,7 @@
 @import url(../blocks/toolbar/__button/toolbar__button.css);
 @import url(../blocks/toolbar/__button/_tool/toolbar__button_tool_select.css);
 @import url(../blocks/toolbar/__button/_disabled/toolbar__button_disabled.css);
+@import url(../blocks/toolbar/__button/_highlight/toolbar__button_highlight.css);
 @import url(../blocks/toolbar/__button/_active/toolbar__button_active.css);
 @import url(../blocks/toolbar/__button/_tool/toolbar__button_tool_drow-polygon.css);
 @import url(../blocks/toolbar/__button/_tool/toolbar__button_tool_drow-rectungle.css);
@@ -20,6 +21,9 @@
 @import url(../blocks/schema/__objects/schema__objects.css);
 @import url(../blocks/schema/__object/schema__object.css);
 @import url(../blocks/schema/__area/schema__area.css);
+@import url(../blocks/schema/__polygon/schema__polygon.css);
+@import url(../blocks/schema/__svg-point/schema__svg-point.css);
+@import url(../blocks/schema/__svg-point-counter/schema__svg-point-counter.css);
 @import url(../blocks/schema/__points/schema__points.css);
 @import url(../blocks/schema/__point/schema__point.css);
 @import url(../blocks/schema/__coordinate-caption/schema__coordinate-caption.css);

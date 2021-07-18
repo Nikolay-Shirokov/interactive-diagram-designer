@@ -1,5 +1,5 @@
 ﻿.schema {
   display: grid;
-  grid-template-columns: 1fr 700px 1fr;
+  grid-template-columns: 150px 700px 1fr;
   gap: var(--basic-interval);
 }
