@@ -7,4 +7,5 @@
 .root {
   padding: 0 30px;
   max-width: calc(1000px + 2*var(--basic-interval));
+  font-family: 'Inter', sans-serif;
 }
