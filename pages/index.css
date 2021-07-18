@@ -1,6 +1,7 @@
 ﻿@import url(../vendor/normalize.css);
 
 @import url(../blocks/root/root.css);
+@import url(../blocks/constructor/constructor.css);
 @import url(../blocks/title/title.css);
 @import url(../blocks/toolbar/toolbar.css);
 @import url(../blocks/toolbar/__button/toolbar__button.css);
@@ -10,6 +11,9 @@
 @import url(../blocks/toolbar/__button/_tool/toolbar__button_tool_drow-polygon.css);
 @import url(../blocks/toolbar/__button/_tool/toolbar__button_tool_drow-rectungle.css);
 @import url(../blocks/toolbar/__button/_tool/toolbar__button_tool_fix.css);
+@import url(../blocks/toolbar/__space/toolbar__space.css);
+@import url(../blocks/toolbar/__button/_tool/toolbar__button_tool_drow.css);
+@import url(../blocks/toolbar/__button/_tool/toolbar__button_tool_cancel.css);
 @import url(../blocks/schema/schema.css);
 @import url(../blocks/schema/__image/schema__image.css);
 @import url(../blocks/schema/__objects/schema__objects.css);
