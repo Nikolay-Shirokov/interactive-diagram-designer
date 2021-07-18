@@ -1,0 +1,20 @@
+﻿.toolbar__button {
+  width: 35px;
+  height: 35px;
+  border: none;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 22px 22px;
+  border-radius: 6px;
+}
+
+.toolbar__button:hover {
+  /* border: 1px solid gray; */
+  /* box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2); */
+  background-color: #eee;
+}
+
+.toolbar__button:active {
+  background-color: #eee;
+}
