@@ -6,6 +6,7 @@
 @import url(../blocks/toolbar/__button/toolbar__button.css);
 @import url(../blocks/toolbar/__button/_active/toolbar__button_active.css);
 @import url(../blocks/toolbar/__button/_tool/toolbar__button_tool_select.css);
+@import url(../blocks/toolbar/__button/_disabled/toolbar__button_disabled.css);
 @import url(../blocks/toolbar/__button/_tool/toolbar__button_tool_drow-polygon.css);
 @import url(../blocks/toolbar/__button/_tool/toolbar__button_tool_drow-rectungle.css);
 @import url(../blocks/toolbar/__button/_tool/toolbar__button_tool_fix.css);

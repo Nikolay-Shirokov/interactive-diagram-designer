@@ -9,12 +9,14 @@
   border-radius: 6px;
 }
 
-.toolbar__button:hover {
+.toolbar__button:not(.toolbar__button_disabled):hover {
   /* border: 1px solid gray; */
   /* box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2); */
   background-color: #eee;
+  cursor: pointer;
 }
 
 .toolbar__button:active {
   background-color: #eee;
 }
+
