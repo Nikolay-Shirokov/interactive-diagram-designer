@@ -1,8 +1,8 @@
-const pointsBox = document.querySelector(".schema__points");
-const objectsBox = document.querySelector(".schema__objects");
-const svg = document.querySelector(".schema__area");
-const drowButton = document.querySelector(".toolbar__button_tool_drow");
-const cancelButton = document.querySelector(".toolbar__button_tool_cancel");
+const pointsBox = document.querySelector('.schema__points');
+const objectsBox = document.querySelector('.schema__objects');
+const svg = document.querySelector('.schema__area');
+const drowButton = document.querySelector('.toolbar__button_tool_drow');
+const cancelButton = document.querySelector('.toolbar__button_tool_cancel');
 
 function renderPointProperties(point) {
   pointHTML =
@@ -12,35 +12,37 @@ function renderPointProperties(point) {
       <label class="schema__coordinate-caption" for="point-${pointsBox.childNodes.length}-y">y:</label>
       <input class="schema__coordinate-input" type="number" name="point-${pointsBox.childNodes.length}-y" id="point-${pointsBox.childNodes.length}-y" value=${point.y}>
     </li>`;
-  pointsBox.insertAdjacentHTML("beforeend", pointHTML);
+  pointsBox.insertAdjacentHTML('beforeend', pointHTML);
 };
 
 function renderPoint(point) {
 
-  let pointSVG = `<circle class="schema__svg-point" cx="${point.x}" cy="${point.y}" r="2" fill="#000"/>`;
-  svg.insertAdjacentHTML("beforeend", pointSVG);
+  let pointCounter = pointsBox.childNodes.length - 1;
 
-  let textSVG = `<text class="schema__svg-point-counter" x="${point.x}" y="${point.y}">${pointsBox.childNodes.length}</text>`;
-  svg.insertAdjacentHTML("beforeend", textSVG);
+  let pointSVG = `<circle class="schema__svg-point" id="point-${pointCounter}" cx="${point.x}" cy="${point.y}" r="2" fill="#000"/>`;
+  svg.insertAdjacentHTML('beforeend', pointSVG);
+
+  let textSVG = `<text class="schema__svg-point-counter" id="point-caption-${pointCounter}" x="${point.x}" y="${point.y}">${pointCounter + 1}</text>`;
+  svg.insertAdjacentHTML('beforeend', textSVG);
 
 };
 
 function renderPolygon(points) {
 
-  let pointsText = "";
+  let pointsText = '';
 
   for (let point of points) {
-    pointsText += " " + point.x + "," + point.y;
+    pointsText += ' ' + point.x + ',' + point.y;
   };
 
   let poligonSVG = `<polygon class="schema__polygon" points="${pointsText}"/>`;
-  svg.insertAdjacentHTML("beforeend", poligonSVG);
+  svg.insertAdjacentHTML('beforeend', poligonSVG);
 
 };
 
 function renderObject() {
   let objectHTML = `<li class="schema__object">${objectsBox.childNodes.length + 1}</li>`;
-  objectsBox.insertAdjacentHTML("beforeend", objectHTML);
+  objectsBox.insertAdjacentHTML('beforeend', objectHTML);
 }
 
 function getPoints() {
@@ -87,7 +89,7 @@ function clearPoints() {
     };
   };
 
-  pointsBox.innerHTML = "";
+  pointsBox.innerHTML = '';
 
 };
 
@@ -115,9 +117,9 @@ function onDrowButtonClick(event) {
 }
 
 function onCancelButtonClick(event) {
-  /* svg.innerHTML = "";
-  pointsBox.innerHTML = "";
-  objectsBox.innerHTML= ""; */
+  /* svg.innerHTML = '';
+  pointsBox.innerHTML = '';
+  objectsBox.innerHTML= ''; */
   clearPoints();
   highlightDrowButton(false);
 }
@@ -137,15 +139,54 @@ function onSVGAreaClick(event) {
 
 }
 
-svg.addEventListener("click", onSVGAreaClick);
-drowButton.addEventListener("click", onDrowButtonClick);
-cancelButton.addEventListener("click", onCancelButtonClick);
+function onPointClick(event) {
 
-pointsBox.innerHTML = "";
-objectsBox.innerHTML = "";
+  let pointsSVG = svg.querySelectorAll('.schema__svg-point');
+  for (let index = 0; index < pointsSVG.length; index++) {
+    const element = pointsSVG[index];
+    element.classList.remove('schema__svg-point_active');
+  }
+
+  let labelsSVG = svg.querySelectorAll('.schema__svg-point-counter');
+  for (let index = 0; index < labelsSVG.length; index++) {
+    const element = labelsSVG[index];
+    element.classList.remove('schema__svg-point-counter_active');
+  }
+
+  if (event.target.tagName !== 'INPUT') {
+    return;
+  }
+
+  let input = event.target;
+
+  let constituents = input.id.split('-');
+  let axisID = constituents[2];
+  constituents.pop();
+  let pointID = constituents.join('-');
+
+  let pointSVG = svg.querySelector(`#${pointID}`);
+  pointSVG.classList.add('schema__svg-point_active');
+
+  let labelSVG = svg.querySelector(`#point-caption-${constituents[1]}`);
+  labelSVG.classList.add('schema__svg-point-counter_active');
+
+  input.addEventListener('input', function (evt) {
+    pointSVG['c' + axisID].baseVal.value = input.value;
+    labelSVG[axisID].baseVal[0].value = input.value;
+  })
+
+}
+
+svg.addEventListener('click', onSVGAreaClick);
+drowButton.addEventListener('click', onDrowButtonClick);
+cancelButton.addEventListener('click', onCancelButtonClick);
+pointsBox.addEventListener('click', onPointClick);
+
+pointsBox.innerHTML = '';
+objectsBox.innerHTML = '';
 
 /* svg
-  .addEventListener("click", function (event) {
+  .addEventListener('click', function (event) {
     if (event.target.classList.contains('polygon')) {
       event.target.classList.toggle('polygon_engaged');
       console.dir(event.target.points);
